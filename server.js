@@ -11,9 +11,10 @@ app.use(require('body-parser').json());
 
 var questions = [];
 
-var gamesList = [];
+var gameList = [];
 
 function Game(data) {
+	data._id = gameList.length;
 	return data;
 }
 
@@ -21,11 +22,12 @@ io.on('connection', function(socket) {
 	socket.on('disconnect', function() {
 	});
 
-	socket.emit('games', gamesList);
+	socket.emit('games', gameList);
 	socket.on('create game', function(data) {
-		gamesList.push(new Game(data));
+		gameList.push(new Game(data));
+		console.log('new game', gameList);
 		console.log('user created game');
-		io.emit('games', gamesList);
+		io.emit('games', gameList);
 	});
 	socket.on('join game', function(game) {
 		console.log('user joined game');
