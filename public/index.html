@@ -1,13 +1,13 @@
 <!doctype html>
-<meta charset="utf-8" />
+<meta charset="utf-8"/>
 <title>likr</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <!-- 
   VALID HTML5!
   Watch this: http://youtu.be/WxmcDoAxdoY 
 -->
-<link rel="stylesheet" href="reset.css" />
-<link rel="stylesheet" href="menu.css" />
+<!--<link rel="stylesheet" href="reset.css" />-->
+<link rel="stylesheet" href="menu.css"/>
 
 <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 <link rel="import" href="bower_components/paper-button/paper-button.html">
@@ -15,18 +15,22 @@
 
 
 <div id="wrap">
-	<ul id="gameList"></ul>
+    <ul id="gameList"></ul>
 
-	<form id="newGame">
-		<paper-input id="gameName" label="Game name" autofocus="autofocus" > </paper-input>
-		<paper-button id="newGameButton" class="btn">submit</paper-button>
-	</form>
+        <table id="createGameForm">
+            <tr>
+            <td style="width: 70%"><paper-input class="fullSize" id="gameName" label="Game name"
+                             autofocus="autofocus"></paper-input></td>
+            <td style="width: 20%"><paper-button id="newGameButton" class="btn">submit</paper-button></td>
+            </tr>
+        </table>
+    </div>
 </div>
 
 <script id="gameListItem" type="text/template">
-<li><a href="game.html?gameId=<%= _id %>"><%= name %></a></li>
+    <li><a href="game.html?gameId=<%= _id %>"><%= name %></a></li>
 </script>
- 
+
 <script src="//cdn.socket.io/socket.io-1.3.5.js"></script>
 <script src="//yastatic.net/underscore/1.6.0/underscore-min.js"></script>
 <script src="//yastatic.net/jquery/2.1.3/jquery.min.js"></script>

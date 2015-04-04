@@ -15,20 +15,29 @@ input {
   border: 0;
   font-family: Arial;
   color: #ffffff;
-  font-size: 20px;
-  background: #3498db;
-  padding: 10px 20px 10px 20px;
+  font-size: 12px;
+  padding: 5px 10px 5px 10px;
   text-decoration: none;
 }
 
-.btn:hover {
-  background: #3cb0fd;
-  text-decoration: none;
+
+.newGameButton, .fullSize {
+  width: 100%;
+  margin: 0 auto;
 }
 
-form {
+.td.createGameForm{
+  width: 70%;
+}
+
+.td.newGameButton {
+  width: 30%;
+}
+
+.createGameForm {
   width: 90%;
   margin: 0 auto;
 }
+
 
 
