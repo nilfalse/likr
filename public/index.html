@@ -12,10 +12,12 @@
 <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 <link rel="import" href="bower_components/paper-button/paper-button.html">
 <link rel="import" href="bower_components/paper-input/paper-input.html">
+<link rel="import" href="bower_components/paper-item/paper-item.html">
 
 
 <div id="wrap">
-    <ul id="gameList" style="width: 100%"></ul>
+    <div id="gameList" style="width: 100%"></div>
+
     <div id="createGameForm">
         <paper-input id="gameName" label="Game name"
                      autofocus="autofocus"></paper-input>
@@ -23,12 +25,10 @@
     </div>
 </div>
 
-<script id="gameListItem" type="text/template">
-    <li>
-        <paper-item>
-            <a href="game.html?gameId=<%= _id %>"><%= name %></a>
+<script id="gameItemTemplate" type="text/template">
+        <paper-item href="game.html?gameId=<%= _id %>">
+            <%= name %>
         </paper-item>
-    </li>
 </script>
 
 <script src="//cdn.socket.io/socket.io-1.3.5.js"></script>
