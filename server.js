@@ -9,16 +9,23 @@ app.use(require('morgan')('combined'));
 // parse application/json 
 app.use(require('body-parser').json());
 
+var questions = [];
+
 var gamesList = [];
+
+function Game(data) {
+	return data;
+}
 
 io.on('connection', function(socket) {
 	socket.on('disconnect', function() {
 	});
 
 	socket.emit('games', gamesList);
-	socket.on('create game', function(game) {
-		gamesList.push(game);
+	socket.on('create game', function(data) {
+		gamesList.push(new Game(data));
 		console.log('user created game');
+		io.emit('games', gamesList);
 	});
 	socket.on('join game', function(game) {
 		console.log('user joined game');

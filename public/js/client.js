@@ -1,21 +1,15 @@
-function createGame() {
-    $.ajax({
-            type:'GET',
-            url: "http://localhost:3000",
-            cache:false,
-            success: function(data) {
-                alert(data.response);
-            }
-	});	            
-}
+var socket = io();
 
-function getGameList() {
-    $.ajax({
-            type:'GET',
-            url: "http://localhost:3000",
-            cache:false,
-            success: function(data) {
-                alert(data.response);
-            }
-	});	            
-}
+socket.on('games', function(games) {
+	var template = _($('#gameListItem').html()).template();
+	var gamesHtml = games.map(function(game) {
+		return template(game);
+	}).join("\n");
+	$('#gameList').html(gamesHtml);
+});
+
+$('#gameList').on('click', function(e) {
+	console.log(e.target.href);
+	e.preventDefault();
+});
+

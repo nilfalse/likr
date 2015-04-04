@@ -7,15 +7,15 @@
 -->
 
 <div id="wrap">
+	<ul id="gameList"></ul>
 </div>
+
+<script id="gameListItem" type="text/template">
+<li><a href="#<%= _id %>"><%= name %></a></li>
+</script>
  
 <script src="//cdn.socket.io/socket.io-1.3.5.js"></script>
 <script src="//yastatic.net/underscore/1.6.0/underscore-min.js"></script>
 <script src="//yastatic.net/jquery/2.1.3/jquery.min.js"></script>
-<script>
-  var socket = io();
-	socket.on('games', function(games) {
-		console.log(games);
-	});
-</script>
+<script src="/js/client.js"></script>
  
