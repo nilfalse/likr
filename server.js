@@ -22,6 +22,18 @@ function Game(data) {
 	});
 }
 
+_(Game.prototype).extend({
+	getPlayers: function() {
+		var rv = [];
+		var clients = io.sockets.adapter.rooms[this.name]
+		var id;
+		for (id in clients) {
+			 rv.push({_id: id, socket: io.sockets.connected[id]})
+		}
+		return rv;
+	}
+});
+
 io.on('connection', function(socket) {
 	socket.on('disconnect', function() {
 	});
@@ -45,6 +57,9 @@ io.on('connection', function(socket) {
 				socket.emit('error', err);
 				return;
 			}
+			game.players = game.getPlayers().map(function(player) {
+				return player._id;
+			});
 			socket.emit('game joined', game);
 		});
 	});
