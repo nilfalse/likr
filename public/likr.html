@@ -1,13 +1,21 @@
 <!doctype html>
 <meta charset="utf-8" />
 <title>likr</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <!-- 
   VALID HTML5!
   Watch this: http://youtu.be/WxmcDoAxdoY 
 -->
+<link rel="stylesheet" href="reset.css" />
+<link rel="stylesheet" href="menu.css" />
 
 <div id="wrap">
 	<ul id="gameList"></ul>
+
+	<form id="newGame">
+		<input name="gameName" placeholder="New Game" />
+		<button class="btn">submit</button>
+	</form>
 </div>
 
 <script id="gameListItem" type="text/template">
