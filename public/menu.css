@@ -7,11 +7,6 @@ input {
 
 .btn {
   background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
   border: 0;
   font-family: Arial;
   color: #ffffff;
@@ -20,10 +15,14 @@ input {
   text-decoration: none;
 }
 
-
-.newGameButton, .fullSize {
+#newGameButton, #gameName, .fullSize {
   width: 100%;
   margin: 0 auto;
+}
+
+#newGameButton {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .td.createGameForm{
@@ -34,7 +33,7 @@ input {
   width: 30%;
 }
 
-.createGameForm {
+#createGameForm {
   width: 90%;
   margin: 0 auto;
 }
