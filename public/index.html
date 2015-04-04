@@ -16,19 +16,19 @@
 
 <div id="wrap">
     <ul id="gameList" style="width: 100%"></ul>
-
-        <table id="createGameForm">
-            <tr>
-            <td style="width: 70%"><paper-input id="gameName" label="Game name"
-                             autofocus="autofocus"></paper-input></td>
-            <td style="width: 20%"><paper-button id="newGameButton" class="btn">submit</paper-button></td>
-            </tr>
-        </table>
+    <div id="createGameForm">
+        <paper-input id="gameName" label="Game name"
+                     autofocus="autofocus"></paper-input>
+        <paper-button id="newGameButton" class="btn">submit</paper-button>
     </div>
 </div>
 
 <script id="gameListItem" type="text/template">
-    <li><a href="game.html?gameId=<%= _id %>"><%= name %></a></li>
+    <li>
+        <paper-item>
+            <a href="game.html?gameId=<%= _id %>"><%= name %></a>
+        </paper-item>
+    </li>
 </script>
 
 <script src="//cdn.socket.io/socket.io-1.3.5.js"></script>

@@ -15,22 +15,20 @@ input {
   text-decoration: none;
 }
 
-#newGameButton, #gameName, .fullSize {
+.fullSize {
   width: 100%;
   margin: 0 auto;
 }
 
+#gameName {
+  width: calc(100% - 150px);
+  float: left;
+
+}
+
 #newGameButton {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.td.createGameForm{
-  width: 70%;
-}
-
-.td.newGameButton {
-  width: 30%;
+  width: 130px;
+  float: right;
 }
 
 #createGameForm {
