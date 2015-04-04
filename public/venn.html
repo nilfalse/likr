@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Simple venn.js example</title>
+<style>
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+#venn {
+	height: 20%;
+	width: 20%;
+}
+</style>
+</head>
+
+<body>
+	<div>
+		<button id="move">+1</button>
+	</div>
+    <div id="venn"></div>
+</body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/venn.js"></script>
+<script>
+// define sets and set set intersections
+var sets = [ {sets: ['A'], size: 10}, 
+             {sets: ['B'], size: 10},
+             {sets: ['A','B'], size: 0}];
+
+var chart = venn.VennDiagram();
+d3.select("#venn").datum(sets).call(chart);
+
+
+function changeDiagram(diagram, data) {
+	data[data.length-1].size++;
+	d3.select("#venn").datum(data).call(diagram);	
+}
+
+d3.select("button").on("click", function() {
+    changeDiagram(chart, sets);
+});
+</script>
