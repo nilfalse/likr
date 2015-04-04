@@ -26,7 +26,6 @@ io.on('connection', function(socket) {
 	socket.on('disconnect', function() {
 	});
 
-	socket.emit('games', gameList);
 	socket.on('game create', function(data) {
 		var game = new Game(data);
 		gameList.push(game);
@@ -34,9 +33,23 @@ io.on('connection', function(socket) {
 		io.emit('games', gameList);
 	});
 
-	socket.on('game join', function(game) {
-		socket.join(game._id);
+	socket.on('game join', function(gameId) {
+		var game = _(gameList).findWhere({_id: gameId});
+		if (!game) {
+			socket.emit('error', {description: 'game not found'});
+			return;
+		}
+
+		socket.join(gameId, function(err) {
+			if (err) {
+				socket.emit('error', err);
+				return;
+			}
+			socket.emit('game joined', game);
+		});
 	});
+
+	socket.emit('games', gameList);
 });
 
 app.get('/', function(req, res) {
