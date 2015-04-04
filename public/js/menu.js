@@ -8,22 +8,23 @@ socket.on('games', function(games) {
 	$('#gameList').html(gamesHtml);
 });
 
-$('#newGameButton').on('click', function(e) {
+function createNewGame(e) {
 	var gameName = $('#gameName').val();
 	socket.emit('game create', {
 		name: gameName
 	});
 	console.log(gameName);	
 	e.preventDefault();
+}
 
+$('#newGameButton').on('click', createNewGame);
+
+$("#gameName").keyup(function (e) {
+    if (e.keyCode == 13) {
+        createNewGame(e);
+    }
 });
-
 
 socket.on('game created', function(game) {
 	location.href = "/game.html?gameId=" + game._id;
 });
-// $('#gameList').on('click', function(e) {
-// 	console.log(e.target.href);
-// 	e.preventDefault();
-// });
-
