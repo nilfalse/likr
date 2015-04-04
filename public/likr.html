@@ -14,9 +14,8 @@
 <script src="//yastatic.net/jquery/2.1.3/jquery.min.js"></script>
 <script>
   var socket = io();
-
-	// setInterval(function() {
-  //   socket.emit('im here');
-	// }, 1000);
+	socket.on('games', function(games) {
+		console.log(games);
+	});
 </script>
  
