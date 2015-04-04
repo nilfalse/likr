@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Likr</title>
+	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/client.js"></script>
+</head>
+<body>
+	<a id="createGameId" href="#">Create game</a>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#createGameId").click(function(e) {
+				e.preventDefault();
+				createGame();
+			});
+		});
+	</script>
+
+</body>
+</html>
