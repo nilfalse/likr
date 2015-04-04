@@ -27,14 +27,15 @@ io.on('connection', function(socket) {
 	});
 
 	socket.emit('games', gameList);
-	socket.on('create game', function(data) {
+	socket.on('game create', function(data) {
 		var game = new Game(data);
 		gameList.push(game);
-		console.log('user created game', game);
+		socket.emit('game created', game);
 		io.emit('games', gameList);
 	});
-	socket.on('join game', function(game) {
-		console.log('user joined game');
+
+	socket.on('game join', function(game) {
+		socket.join(game._id);
 	});
 });
 
