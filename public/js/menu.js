@@ -1,7 +1,7 @@
 var socket = io();
 
 socket.on('games', function(games) {
-	var template = _($('#gameListItem').html()).template();
+	var template = _($('#gameItemTemplate').html()).template();
 	var gamesHtml = games.map(function(game) {
 		return template(game);
 	}).join("\n");
