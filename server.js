@@ -11,7 +11,7 @@ app.use(require('morgan')('combined'));
 // parse application/json 
 app.use(require('body-parser').json());
 
-var questions = [];
+var questions = require('./questions.json');
 
 var gameList = [];
 
