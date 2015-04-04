@@ -1,0 +1,26 @@
+{
+  "name": "likr",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nilfalse/likr",
+  "authors": [
+    "Alexander Semenov <asemenovboyarka@gmail.com>"
+  ],
+  "description": "Hackaton game",
+  "main": "likr.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5",
+    "paper-button": "Polymer/paper-button#~0.5.5",
+    "paper-input": "Polymer/paper-input#~0.5.5"
+  }
+}
