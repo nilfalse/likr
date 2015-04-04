@@ -10,13 +10,18 @@ socket.on('games', function(games) {
 
 $('#newGameButton').on('click', function(e) {
 	var gameName = $('#gameName').val();
-	socket.emit('create game', {
+	socket.emit('game create', {
 		name: gameName
 	});
-	console.log(gameName);
+	console.log(gameName);	
 	e.preventDefault();
+
 });
 
+
+socket.on('game created', function(game) {
+	location.href = "/game.html?gameId=" + game._id;
+});
 // $('#gameList').on('click', function(e) {
 // 	console.log(e.target.href);
 // 	e.preventDefault();
