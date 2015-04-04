@@ -6,28 +6,28 @@
   VALID HTML5!
   Watch this: http://youtu.be/WxmcDoAxdoY 
 -->
-<!--<link rel="stylesheet" href="reset.css" />-->
 <link rel="stylesheet" href="menu.css"/>
 
 <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+<link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/paper-button/paper-button.html">
 <link rel="import" href="bower_components/paper-input/paper-input.html">
 <link rel="import" href="bower_components/paper-item/paper-item.html">
-
-
+<body unresolved>
 <div id="wrap">
-    <div id="gameList" style="width: 100%"></div>
+    <div id="gameList" vertical layout style="width: 100%"></div>
 
-    <div id="createGameForm">
+    <div id="createGameForm" horizontal layout>
         <paper-input id="gameName" label="Game name"
-                     autofocus="autofocus"></paper-input>
-        <paper-button id="newGameButton" class="btn">submit</paper-button>
+                     autofocus="autofocus" flex></paper-input>
+
+        <paper-button id="newGameButton">submit</paper-button>
     </div>
 </div>
 
 <script id="gameItemTemplate" type="text/template">
-        <paper-item>
-           <a href="game.html?gameId=<%= _id %>"><%= name %></a>
+        <paper-item auto-vertical >
+           <a href="game.html?gameId=<%= _id %>" layout horizontal center-justified><%= name %></a>
         </paper-item>
 </script>
 
@@ -36,4 +36,5 @@
 <script src="//yastatic.net/underscore/1.6.0/underscore-min.js"></script>
 <script src="//yastatic.net/jquery/2.1.3/jquery.min.js"></script>
 <script src="/js/menu.js"></script>
- 
+
+</body>
