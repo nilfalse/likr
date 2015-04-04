@@ -8,7 +8,7 @@ socket.on('games', function(games) {
 	$('#gameList').html(gamesHtml);
 });
 
-$('form').on('submit', function(e) {
+$('#newGameButton').on('click', function(e) {
 	var gameName = $('#gameName').val();
 	socket.emit('create game', {
 		name: gameName
