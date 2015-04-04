@@ -10,6 +10,7 @@
     "node": "0.12.x"
   },
   "dependencies": {
+    "node-uuid": "^1.4.3",
     "body-parser": "^1.12.0",
     "express": "^4.12.0",
     "mongoose": "^3.8.23",

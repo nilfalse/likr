@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var uuid = require('node-uuid');
 
 var express = require('express');
 var app = express();
@@ -17,7 +18,7 @@ var gameList = [];
 
 function Game(data) {
 	_(this).extend(data, {
-		_id: gameList.length + 1
+		_id: uuid.v4()
 	});
 }
 
