@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
@@ -14,8 +16,9 @@ var questions = [];
 var gameList = [];
 
 function Game(data) {
-	data._id = gameList.length;
-	return data;
+	_(this).extend(data, {
+		_id: gameList.length + 1
+	});
 }
 
 io.on('connection', function(socket) {
@@ -24,9 +27,9 @@ io.on('connection', function(socket) {
 
 	socket.emit('games', gameList);
 	socket.on('create game', function(data) {
-		gameList.push(new Game(data));
-		console.log('new game', gameList);
-		console.log('user created game');
+		var game = new Game(data);
+		gameList.push(game);
+		console.log('user created game', game);
 		io.emit('games', gameList);
 	});
 	socket.on('join game', function(game) {
@@ -39,7 +42,7 @@ app.get('/', function(req, res) {
 });
 
 var port = process.env.PORT || 3000;
-http.listen(port, function(){
+http.listen(port, function() {
 	console.log('listening to port', port);
 });
 
