@@ -5,36 +5,31 @@ input {
 #newGame button {
 }
 
-.btn {
-  background: #3498db;
-  border: 0;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 12px;
-  padding: 5px 10px 5px 10px;
-  text-decoration: none;
-}
-
 .fullSize {
   width: 100%;
   margin: 0 auto;
 }
 
-#gameName {
-  width: calc(100% - 150px);
-  float: left;
+/*#gameName {*/
+  /*width: calc(100% - 150px);*/
+  /*float: left;*/
 
-}
+/*}*/
 
 #newGameButton {
   width: 130px;
   float: right;
 }
 
-#createGameForm {
-  width: 90%;
+#wrap {
+  width: 95%;
   margin: 0 auto;
 }
+
+.paper-item {
+  background: #006666;
+}
+
 
 
 
