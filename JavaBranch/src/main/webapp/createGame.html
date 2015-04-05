@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>New game</title>
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="resources/css/menu.css">
+<link rel="stylesheet" href="resources/css/user.css">
+</head>
+<body>
+	<div class="container">
+		<div id="userRegion"></div>
+
+		<div id="menuRegion">
+			<h1>New game</h1>
+			<label for="gameName" class="sr-only">Enter game title</label> <input
+				type="text" id="gameName" class="form-control"
+				placeholder="Game title" required autofocus>
+			<button id="createButton" class="btn btn-lg btn-primary btn-block"
+				type="submit">Create</button>
+		</div>
+	</div>
+	<script src="resources/js/jquery-1.11.2.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/pages/createGame.js"></script>
+	<script src="resources/js/user.js"></script>
+</body>
+</html>

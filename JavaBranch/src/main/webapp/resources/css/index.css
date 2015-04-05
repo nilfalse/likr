@@ -1,0 +1,33 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+#loginRegion {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#loginRegion h1 {
+  text-align: center;
+}
+
+#loginRegion .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+#loginRegion.form-control:focus {
+  z-index: 2;
+}
+#loginRegion input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
