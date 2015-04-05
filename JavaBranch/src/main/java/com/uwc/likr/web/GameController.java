@@ -35,7 +35,7 @@ public class GameController {
             int id = gameService.save(game);
             game.setId(id);
             game.setState(GameState.CREATED);
-            
+
             request.getSession().setAttribute("gameId", id);
         } catch (ServiceException e) {
             // TODO Auto-generated catch block
@@ -132,11 +132,16 @@ public class GameController {
     @RequestMapping (
         method = RequestMethod.GET,
         value = "/rightAnswersCount")
-    public @ResponseBody int rightAnswersCount(@RequestParam int id) {
+    public @ResponseBody int rightAnswersCount(HttpServletRequest request) {
         try {
-            Game game = gameService.getById(id);
-            int count = gameService.getRightAnswersCount(game);
-            return count;
+            Object gameIdObject = request.getSession().getAttribute("gameId");
+            if (gameIdObject != null) {
+                int gameId = (Integer) gameIdObject;
+                Game game = gameService.getById(gameId);
+                int count = gameService.getRightAnswersCount(game);
+                return count;
+            }
+            return 0;
         } catch (ServiceException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -55,14 +55,15 @@ public class QuestionController {
     @RequestMapping (
         method = RequestMethod.POST,
         value = "/answer")
-    public @ResponseBody boolean saveAnswer(@RequestParam int answerId, @RequestParam int gameId, HttpServletRequest request) {
-
+    public @ResponseBody boolean saveAnswer(@RequestParam int answerId, HttpServletRequest request) {
         try {
-            Game game = gameService.getById(gameId);
-            Question question = questionService.getQuestion(game);
             Object userIdObject = request.getSession().getAttribute("userId");
-            if (userIdObject != null) {
+            Object gameIdObject = request.getSession().getAttribute("gameId");
+            if (gameIdObject != null && userIdObject != null) {
                 int userId = (Integer) userIdObject;
+                int gameId = (Integer) gameIdObject;
+                Game game = gameService.getById(gameId);
+                Question question = questionService.getQuestion(game);
                 User user = userService.getById(userId);
                 Answer answer = answerService.getById(answerId);
                 questionService.save(game, user, question, answer);
