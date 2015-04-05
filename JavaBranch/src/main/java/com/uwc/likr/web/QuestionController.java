@@ -36,11 +36,15 @@ public class QuestionController {
     @RequestMapping (
         method = RequestMethod.GET,
         value = "/get")
-    public @ResponseBody Question getQuestion(@RequestParam int gameId) {
-        Question question = null;
+    public @ResponseBody Question getQuestion(HttpServletRequest request) {
+        Question question = new Question();
         try {
-            Game game = gameService.getById(gameId);
-            question = questionService.getQuestion(game);
+            Object gameIdObject = request.getSession().getAttribute("gameId");
+            if (gameIdObject != null) {
+                int gameId = (Integer) gameIdObject;
+                Game game = gameService.getById(gameId);
+                question = questionService.getQuestion(game);
+            }
         } catch (ServiceException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

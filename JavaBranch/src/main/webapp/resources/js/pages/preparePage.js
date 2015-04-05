@@ -49,7 +49,17 @@ function loadGameName() {
 }
 
 function startGame() {
-	location.href="game.html";
+	$.ajax({
+		type : 'POST',
+		url : "rest/game/start",
+		cache : false,
+		success : function(result) {
+			if(result) {
+				location.href="game.html";
+			}
+		}
+	});
+	
 }
 
 $(document).ready(function() {
