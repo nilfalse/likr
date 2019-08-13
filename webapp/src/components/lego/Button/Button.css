@@ -1,0 +1,28 @@
+.button {
+  text-decoration: none;
+  outline: 0;
+  border: 0;
+  font-size: 13px;
+  padding: 7px 14px 8px;
+  transition: background .15s;
+  border-radius: 3px;
+  background: #e8e8e8;
+  color: #000;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.button_primary {
+  background-color: #fdc03c;
+}
+
+.button_floating {
+  position: fixed;
+  margin: 14px;
+  bottom: 32px;
+}
+
+.button_round {
+  border-radius: 50%;
+}

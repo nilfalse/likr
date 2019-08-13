@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../migrations",
+    "target": "es2017",
+    "lib": [ "es2017", "dom" ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "types": ["node-pg-migrate"],
+    "listEmittedFiles": true
+  }
+}

@@ -1,0 +1,64 @@
+.uberbar-profile {
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+.uberbar-profile__container {
+  cursor: pointer;
+}
+
+.uberbar-profile__button {
+  display: none;
+}
+
+.uberbar-profile__overlay::before {
+  cursor: default;
+  position: fixed;
+  background: rgba(0,0,0,.06);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.uberbar-profile__modal {
+  display: none;
+  cursor: default;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 220px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 1px;
+  background: #fff;
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,.4);
+
+  z-index: 1;
+}
+.uberbar-profile__modal-list-item {
+  display: block;
+  padding: 4px;
+}
+.uberbar-profile__modal-list-item:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.uberbar-profile__button:checked ~ .uberbar-profile__overlay::before {
+  content: '';
+}
+.uberbar-profile__button:checked ~ .uberbar-profile__modal {
+  display: block;
+}
+
+.uberbar-profile_round .uberbar-profile__button {
+  border-radius: 50%;
+  overflow: hidden;
+}
+

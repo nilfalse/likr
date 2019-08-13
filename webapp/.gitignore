@@ -1,0 +1,4 @@
+dist/
+migrations/*.js
+tools/config.js
+tools/util/

@@ -1,0 +1,8 @@
+.notification_info {
+  background: #f0fbff;
+  color: #0288d1;
+}
+
+.notification_error {
+  border: 1px solid red;
+}

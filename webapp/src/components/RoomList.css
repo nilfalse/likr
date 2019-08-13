@@ -1,0 +1,25 @@
+.roomlist {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  width: 100%;
+}
+
+.room-card {
+  display: block;
+  margin: 10px;
+  padding: 12px 14px;
+  background: #242527;
+  color: #fefdfe;
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.1), 0 2px 6px 0 rgba(0,0,0,.1);
+}
+
+.room-card:hover,.room-card:active,.room-card:focus {
+  outline: 2px solid #fc0;
+}
+
+.room-card:focus {
+  color: #c00;
+}

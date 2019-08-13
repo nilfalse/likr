@@ -1,0 +1,125 @@
+.room-create {
+  max-width: 600px;
+  width: 100%;
+  margin: 0;
+}
+
+.room-create__box {
+  display: flex;
+  margin: 10px;
+}
+
+.room-create__input {
+  flex: 1 0 auto;
+  padding: 6px 10px;
+  font-size: 16px;
+  border: 1px solid #e8e8e8;
+  outline: none;
+}
+
+.room-create__color-list {
+  max-width: 220px;
+  margin: 10px;
+}
+
+.room-create__shape-list {
+  margin: 10px;
+}
+
+.room-create__shape-item {
+  width: 100px;
+  height: 100px;
+}
+
+.room-create__submit {
+  margin: 10px;
+}
+
+.room-create__button {
+  outline: 0;
+  border: 0;
+  font-size: 13px;
+  padding: 7px 14px 8px;
+  transition: background .15s;
+  border-radius: 3px;
+  background: #e8e8e8;
+  color: #000;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+}
+.room-create__button:disabled {
+  color: #8c8c8c;
+  cursor: not-allowed;
+}
+.room-create__button:not(:disabled):focus,
+.room-create__button:not(:disabled):hover {
+  background: #dedede;
+}
+.room-create__button:active {
+  background: #d3d1cb;
+}
+
+
+.form-colors__item-wrap {
+  display: block;
+  width: 120px;
+  height: 60px;
+  margin: 0;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.form-colors__item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-shadow: inset 0 -7px 9px -7px rgba(0,0,0,0.7);
+}
+
+.form-colors__item-label {
+  display: inline-block;
+  margin: 6px;
+  transition: margin .25s ease-in;
+}
+
+.form-colors__item-wrap_light .form-colors__item-label {
+  color: #000;
+}
+.form-colors__item-wrap_dark .form-colors__item-label {
+  color: #fff;
+}
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + .form-colors__item {
+  cursor: pointer;
+}
+
+.form-colors__item::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  width: 0;
+  right: 6px;
+  height: 2px;
+  transition: width .25s linear;
+}
+[type=radio]:checked + .form-colors__item::after {
+  width: 108px;
+}
+[type=radio]:checked + .form-colors__item .form-colors__item-label {
+  margin-top: 12px;
+  transition-timing-function: ease-out;
+}
+.form-colors__item-wrap_light .form-colors__item::after {
+  background-color: #000;
+}
+.form-colors__item-wrap_dark .form-colors__item::after {
+  background-color: #fff;
+}
