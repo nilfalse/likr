@@ -18,4 +18,4 @@ This is work in progress. Feel free to navigate the branches of this repository.
 Check out the website in the repository description and stay tuned!
 
 ## Credits
-The original idea was introduced back in 2015 during a 24-hours hackathon.
+The original idea was introduced [back in 2015](https://github.com/nilfalse/likr/tree/2015-hackathon-legacy) during a 24-hours hackathon.
