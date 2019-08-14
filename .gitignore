@@ -1,1 +1,3 @@
 /build/
+/static-app/.cache
+/static-app/public
