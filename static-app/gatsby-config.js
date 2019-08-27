@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `http://likr.xyz/`,
+    siteUrl: `https://likr.xyz/`,
     title: `likr`,
     description: `Find out how well you match with another person`,
     author: `@nilfalse`,
