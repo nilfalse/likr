@@ -1,0 +1,36 @@
+.image-split {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.image-split__container {
+  position: absolute;
+  display: flex;
+  left: -64px;
+  right: -64px;
+  height: 100%;
+}
+
+.image-split__item {
+  width: 100%;
+  overflow: hidden;
+  transform: skew(-15deg);
+  transition: width 0.6s linear;
+  will-change: transform; /* Safari iOS + macOS fix for the image to the left */
+}
+
+.image-split__item + .image-split__item {
+  border-left: 2px solid #414d59;
+}
+
+.image-split__item_hidden {
+  width: 0;
+}
+
+.image-split__img {
+  margin-left: -40px;
+  width: calc(100% + 80px);
+  height: 100%;
+  transform: skew(15deg);
+}

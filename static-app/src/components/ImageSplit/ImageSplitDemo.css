@@ -1,0 +1,30 @@
+.image-split-demo {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.image-split-demo__item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.image-split-demo__hidden {
+  display: none;
+}
+
+.image-split-demo__next {
+  transform: translateY(100%);
+}
+
+.image-split-demo_enter .image-split-demo__current .image-split-demo__container {
+  opacity: 0;
+  transform: scale(1.2);
+  transition: opacity 0.6s ease-in, transform 0.6s linear;
+}
+
+.image-split-demo_enter .image-split-demo__next {
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.39, 0.58, 0.57, 1);
+}

@@ -1,0 +1,24 @@
+.not-found__content {
+  padding: 16px;
+}
+
+.not-found__offset {
+  padding-top: 30px;
+}
+
+.not-found__headline {
+  color: #fff;
+  margin: 0;
+  padding: 8px 0;
+  font-size: 1.8rem;
+}
+
+.not-found__copy {
+  margin: 0;
+  padding: 8px 0;
+}
+
+.not-found__link {
+  color: #fff;
+  padding: 8px 0;
+}

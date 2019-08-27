@@ -1,0 +1,16 @@
+@media (min-width: 992px) {
+  .container {
+    box-sizing: border-box;
+    max-width: 970px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .container_split {
+    display: flex;
+  }
+
+  .container__split_half {
+    width: 50%;
+  }
+}

@@ -1,0 +1,39 @@
+.smartphone {
+  padding: 18px 19px;
+  padding-bottom: 0;
+  width: 315px;
+  height: 350px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.smartphone__screen {
+  background-color: #ddd;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  overflow: hidden;
+}
+
+.smartphone__top {
+  height: 23px;
+  overflow: hidden;
+}
+
+.smartphone__content {
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.smartphone__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: center center no-repeat url('./smartphone.png');
+  background-size: 315px 350px;
+}

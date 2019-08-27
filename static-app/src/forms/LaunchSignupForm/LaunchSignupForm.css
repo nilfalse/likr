@@ -1,0 +1,9 @@
+.launch-signup-form {
+  display: flex;
+  align-items: center;
+}
+
+.launch-signup-form__input {
+  flex-grow: 1;
+  margin-right: 16px;
+}

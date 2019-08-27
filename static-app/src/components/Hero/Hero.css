@@ -1,0 +1,9 @@
+.hero {
+  background-image: linear-gradient(#505b68, #fff);
+  background-size: cover;
+  box-shadow: inset 0 0 50px #414d59;
+}
+
+.hero__container {
+  background-color: rgba(85, 98, 112, 0.79);
+}

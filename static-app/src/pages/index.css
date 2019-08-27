@@ -1,0 +1,46 @@
+.index__container {
+  padding: 16px 32px;
+}
+
+.index__offset {
+  padding-top: 40px;
+}
+
+.index__section_dark {
+  background-color: #63707e;
+}
+.index__section_light {
+  background-color: #ddd;
+  color: #414d59;
+}
+
+.index__headline {
+  color: #fff;
+  margin: 0;
+  padding: 12px 0;
+  font-size: 1.8rem;
+}
+.index__section_light .index__headline {
+  color: #414d59;
+}
+
+.index__copy {
+  margin: 0;
+  padding: 8px 0;
+}
+
+.index__cta {
+  margin: 0;
+  padding: 8px 24px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index__bold {
+  color: #fff;
+}
+.index__section_light .index__bold {
+  color: #414d59;
+}
