@@ -5,7 +5,7 @@ build: static
 	mv static-app/public build/cdn
 
 static:
-	cd static-app && npm i && npm run build
+	cd static-app && npm ci && npm run build
 
 clean:
 	- rm -rf build static-app/.cache static-app/public
