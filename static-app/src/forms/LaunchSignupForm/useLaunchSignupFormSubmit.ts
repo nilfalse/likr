@@ -47,7 +47,7 @@ export function useLaunchSignupFormSubmit(): [SubmitState, (e: string) => any] {
     // console.log('submit', email);
     dispatch({ type: 'request', payload: email });
 
-    fetch('https://apis.nilfalse.com/signup/' + email, {
+    fetch('/api/signup/' + email, {
       method: 'POST',
     })
       .then(resp => {
